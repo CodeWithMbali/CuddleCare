@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Service | Cuddle Care</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav>
+    <h1>Cuddle Care</h1>
+    <ul>
+      <li><a href="index.html">Welcome</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="hours.html">Hours</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="active">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Book a Service</h2>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="service">Select Service</label>
+      <select id="service" required>
+        <option value="">Choose a service...</option>
+        <option value="wellness">Mother Wellness Checkup</option>
+        <option value="baby">Baby Health Monitoring</option>
+        <option value="nutrition">Nutrition & Breastfeeding</option>
+        <option value="postpartum">Postpartum Recovery</option>
+        <option value="family-planning">Family Planning & Contraception</option>
+        <option value="abortion">Safe & Confidential Abortion Care</option>
+        <option value="general-health">General Health Checkups & Screenings</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" required>
+
+      <label for="message">Additional Notes</label>
+      <textarea id="message" rows="4"></textarea>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Cuddle Care: Mother & Baby | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
