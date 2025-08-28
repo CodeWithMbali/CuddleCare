@@ -5,12 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Cuddle Care</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: #fdf6e3; }
+    .about-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .about-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 2rem;
+      max-width: 320px;
+      flex: 1 1 280px;
+      text-align: center;
+    }
+    .about-card h3 {
+      margin-top: 0;
+      color: #eed6cb;
+    }
+    .about-card p {
+      color: #444;
+    }
+    .about-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff8ed;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .about-section h3 {
+      margin-top: 2.5rem;
+    }
+    .about-card span.icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
   <nav>
     <h1>Cuddle Care</h1>
     <ul>
-      <li><a href="index.html">Welcome</a></li>
+  <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="hours.html">Hours</a></li>
@@ -19,9 +61,78 @@
     </ul>
   </nav>
 
-  <section>
-    <h2>About Us</h2>
-    <p>Cuddle Care is a trusted health clinic offering comprehensive and confidential healthcare services. In addition to our expertise in maternal and infant care, we provide abortion services, family planning solutions and a variety of health tests. Our team of medical professionals is committed to delivering respectful, high-quality care tailored to each patient’s needs.</p>
+  <section class="about-section">
+    <h2>About Cuddle Care Clinic</h2>
+    <p>Cuddle Care Clinic is dedicated to providing compassionate, confidential, and comprehensive healthcare for mothers, babies, and families. Our experienced medical team offers a range of services in a modern, welcoming environment.</p>
+    <div class="about-cards">
+      <div class="about-card">
+        <h3>Our Mission</h3>
+        <p>To deliver respectful, high-quality care tailored to every patient’s needs, supporting healthy families and communities.</p>
+      </div>
+      <div class="about-card">
+        <h3>Our Team</h3>
+        <p>Experienced doctors, nurses, and counselors who are passionate about maternal and infant health.</p>
+      </div>
+      <div class="about-card">
+        <h3>Modern Facilities</h3>
+        <p>State-of-the-art clinic with comfortable waiting areas, private consultation rooms, and advanced medical equipment.</p>
+      </div>
+      <div class="about-card">
+        <h3>Patient Support</h3>
+        <p>We offer guidance, education, and emotional support for mothers, babies, and families at every stage.</p>
+      </div>
+    </div>
+  <h3>Why Choose Us?</h3>
+    <div class="about-cards">
+      <div class="about-card">
+  <span class="icon">🔒</span>
+        <h4>Confidential & Respectful Care</h4>
+        <p>Your privacy and dignity are our top priorities.</p>
+      </div>
+      <div class="about-card">
+  <span class="icon">🩺</span>
+        <h4>Comprehensive Health Services</h4>
+        <p>Full range of mother, baby, and family healthcare.</p>
+      </div>
+      <div class="about-card">
+  <span class="icon">💻</span>
+        <h4>Easy Online Booking</h4>
+        <p>Book appointments quickly and conveniently online.</p>
+      </div>
+      <div class="about-card">
+  <span class="icon">⚡</span>
+        <h4>Quick Response & Follow-up</h4>
+        <p>Fast, caring support before and after your visit.</p>
+      </div>
+      <div class="about-card">
+  <span class="icon">👩‍👧‍👦</span>
+        <h4>Support for All Stages</h4>
+        <p>Guidance and care for every step of motherhood.</p>
+      </div>
+    </div>
+  <h3>Clinic Values</h3>
+    <div class="about-cards">
+      <div class="about-card">
+  <span class="icon">💖</span>
+        <h4>Compassion</h4>
+        <p>We care deeply for every patient and family.</p>
+      </div>
+      <div class="about-card">
+  <span class="icon">🤝</span>
+        <h4>Respect</h4>
+        <p>We honor your choices and treat everyone with dignity.</p>
+      </div>
+      <div class="about-card">
+  <span class="icon">🔐</span>
+        <h4>Privacy</h4>
+        <p>Your information and care are always confidential.</p>
+      </div>
+      <div class="about-card">
+  <span class="icon">🏆</span>
+        <h4>Excellence</h4>
+        <p>We strive for the highest standards in healthcare.</p>
+      </div>
+    </div>
   </section>
 
   <footer>

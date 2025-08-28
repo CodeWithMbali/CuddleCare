@@ -5,12 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Cuddle Care</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: #fdf6e3; }
+    .services-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 2rem;
+      max-width: 320px;
+      flex: 1 1 280px;
+      text-align: center;
+    }
+    .service-card h3 {
+      margin-top: 0;
+      color: #b48a78;
+    }
+    .service-card p {
+      color: #444;
+    }
+    .service-card .icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .extra-info {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff8ed;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <nav>
     <h1>Cuddle Care</h1>
     <ul>
-      <li><a href="index.html">Welcome</a></li>
+  <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html" class="active">Services</a></li>
       <li><a href="hours.html">Hours</a></li>
@@ -20,17 +60,63 @@
   </nav>
 
   <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li>Mother wellness checkups</li>
-      <li>Baby growth and health monitoring</li>
-      <li>Nutrition & breastfeeding support</li>
-      <li>Postpartum recovery programs</li>
-      <li>Parenting guidance</li>
-      <li>Family planning & contraception support</li>
-      <li>Safe and confidential abortion care</li>
-      <li>General health checkups & screenings</li>
-    </ul>
+    <h2>Our Clinic Services</h2>
+    <div class="services-cards">
+      <div class="service-card">
+        <span class="icon">🩺</span>
+        <h3>Mother Wellness Checkups</h3>
+        <p>Comprehensive health assessments for mothers at all stages.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">👶</span>
+        <h3>Baby Health Monitoring</h3>
+        <p>Growth tracking, vaccinations, and early development support.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">🥗</span>
+        <h3>Nutrition & Breastfeeding</h3>
+        <p>Guidance and support for healthy feeding and nutrition.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">🤱</span>
+        <h3>Postpartum Recovery</h3>
+        <p>Physical and emotional support after childbirth.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">👨‍👩‍👧‍👦</span>
+        <h3>Parenting Guidance</h3>
+        <p>Expert advice for new and experienced parents.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">💊</span>
+        <h3>Family Planning & Contraception</h3>
+        <p>Confidential counseling and contraceptive options.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">🛡️</span>
+        <h3>Abortion Care</h3>
+        <p>Safe, confidential, and respectful abortion services.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">🔬</span>
+        <h3>General Health Checkups & Screenings</h3>
+        <p>Routine health checks for all ages.</p>
+      </div>
+    </div>
+    <div class="extra-info">
+      <h3>Additional Features</h3>
+      <ul style="text-align:left;display:inline-block;">
+        <li>On-site pharmacy for prescriptions and health products</li>
+        <li>Laboratory testing and results</li>
+        <li>Health education workshops</li>
+        <li>Emergency care and referrals</li>
+        <li>Support groups for mothers and families</li>
+        <li>Telehealth consultations available</li>
+      </ul>
+      <h3>How to Access Our Services</h3>
+      <p>Book online, call us, or visit our clinic during operating hours. Walk-ins are welcome for urgent care.</p>
+      <a href="booking.html" class="cta">Book a Service</a>
+    </div>
   </section>
 
   <footer>

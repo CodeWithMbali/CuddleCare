@@ -11,7 +11,7 @@
   <nav>
     <h1>Cuddle Care</h1>
     <ul>
-      <li><a href="index.html">Welcome</a></li>
+  <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="hours.html">Hours</a></li>
@@ -21,16 +21,20 @@
   </nav>
 
   <section>
-    <h2>Book a Service</h2>
-    <form>
+    <h2>Book an Appointment</h2>
+    <p>Fill out the form below to schedule your visit. All information is kept confidential.</p>
+    <form id="bookingForm">
       <label for="name">Full Name</label>
-      <input type="text" id="name" required>
+      <input type="text" id="name" name="name" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" required>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
 
-      <label for="service">Select Service</label>
-      <select id="service" required>
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="service">Service Needed</label>
+      <select id="service" name="service" required>
         <option value="">Choose a service...</option>
         <option value="wellness">Mother Wellness Checkup</option>
         <option value="baby">Baby Health Monitoring</option>
@@ -42,13 +46,43 @@
       </select>
 
       <label for="date">Preferred Date</label>
-      <input type="date" id="date" required>
+      <input type="date" id="date" name="date" required>
 
       <label for="message">Additional Notes</label>
-      <textarea id="message" rows="4"></textarea>
+      <textarea id="message" name="message" rows="4"></textarea>
 
       <button type="submit">Submit Booking</button>
     </form>
+    <script>
+      document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          service: form.service.value,
+          date: form.date.value,
+          message: form.message.value
+        };
+        try {
+          const res = await fetch('http://localhost:3001/api/book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          const result = await res.json();
+          if(result.success) {
+            alert('Booking submitted successfully!');
+            form.reset();
+          } else {
+            alert('Error: ' + (result.error || 'Could not submit booking.'));
+          }
+        } catch (err) {
+          alert('Network error: ' + err.message);
+        }
+      });
+    </script>
   </section>
 
   <footer>
