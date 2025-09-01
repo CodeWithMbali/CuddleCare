@@ -464,3 +464,60 @@ footer {
   border-radius: 8px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.05);
 }
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Adjust navigation for tablets */
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .home-hero {
+    padding: 2rem 1rem;
+  }
+
+  .services-grid, .trust-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust layout for mobile devices */
+  .mission-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-grid, .trust-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    text-align: center;
+  }
+
+  .home-info-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for small screens */
+  .hero-card, .info-card, .service-card, .trust-card {
+    padding: 1rem;
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
