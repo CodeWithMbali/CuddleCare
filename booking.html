@@ -5,6 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book a Service | Cuddle Care</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #fdf6f6; /* Soft, warm background */
+      color: #555;
+    }
+    section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      text-align: center;
+      color: #ff6b78;
+      font-size: 2.5em;
+    }
+    section p {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background-color: #fff;
+      border: 1px solid #f0f0f0;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #333;
+      font-size: 1.4em;
+      min-height: 60px; /* Ensures alignment */
+    }
+    .book-btn {
+      display: inline-block;
+      background-color: #ff8c94; /* A soft, caring color */
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .book-btn:hover {
+      background-color: #ff6b78;
+      transform: scale(1.05);
+    }
+  </style>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -22,67 +94,37 @@
 
   <section>
     <h2>Book an Appointment</h2>
-    <p>Fill out the form below to schedule your visit. All information is kept confidential.</p>
-    <form id="bookingForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required>
-
-      <label for="service">Service Needed</label>
-      <select id="service" name="service" required>
-        <option value="">Choose a service...</option>
-        <option value="wellness">Mother Wellness Checkup</option>
-        <option value="baby">Baby Health Monitoring</option>
-        <option value="nutrition">Nutrition & Breastfeeding</option>
-        <option value="postpartum">Postpartum Recovery</option>
-        <option value="family-planning">Family Planning & Contraception</option>
-        <option value="abortion">Safe & Confidential Abortion Care</option>
-        <option value="general-health">General Health Checkups & Screenings</option>
-      </select>
-
-      <label for="date">Preferred Date</label>
-      <input type="date" id="date" name="date" required>
-
-      <label for="message">Additional Notes</label>
-      <textarea id="message" name="message" rows="4"></textarea>
-
-      <button type="submit">Submit Booking</button>
-    </form>
-    <script>
-      document.getElementById('bookingForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const data = {
-          name: form.name.value,
-          email: form.email.value,
-          phone: form.phone.value,
-          service: form.service.value,
-          date: form.date.value,
-          message: form.message.value
-        };
-        try {
-          const res = await fetch('http://localhost:3001/api/book', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          });
-          const result = await res.json();
-          if(result.success) {
-            alert('Booking submitted successfully!');
-            form.reset();
-          } else {
-            alert('Error: ' + (result.error || 'Could not submit booking.'));
-          }
-        } catch (err) {
-          alert('Network error: ' + err.message);
-        }
-      });
-    </script>
+    <p>Click on a service below to send us a booking request via email.</p>
+    <div class="service-cards">
+      <div class="card">
+        <h3>🤰 Mother Wellness Checkup</h3>
+        <a href="mailto:clinic@cuddlecare.com?subject=Booking Request: Mother Wellness Checkup&body=Dear Cuddle Care,%0D%0A%0D%0AI would like to book an appointment for a Mother Wellness Checkup.%0D%0A%0D%0AMy preferred date is: [Please enter date here]%0D%0A%0D%0APlease let me know about availability.%0D%0A%0D%0AThank you." class="book-btn">Book Now</a>
+      </div>
+      <div class="card">
+        <h3>👶 Baby Health Monitoring</h3>
+        <a href="mailto:clinic@cuddlecare.com?subject=Booking Request: Baby Health Monitoring&body=Dear Cuddle Care,%0D%0A%0D%0AI would like to book an appointment for Baby Health Monitoring.%0D%0A%0D%0AMy preferred date is: [Please enter date here]%0D%0A%0D%0APlease let me know about availability.%0D%0A%0D%0AThank you." class="book-btn">Book Now</a>
+      </div>
+      <div class="card">
+        <h3>🤱 Nutrition & Breastfeeding</h3>
+        <a href="mailto:clinic@cuddlecare.com?subject=Booking Request: Nutrition & Breastfeeding&body=Dear Cuddle Care,%0D%0A%0D%0AI would like to book an appointment for Nutrition & Breastfeeding consultation.%0D%0A%0D%0AMy preferred date is: [Please enter date here]%0D%0A%0D%0APlease let me know about availability.%0D%0A%0D%0AThank you." class="book-btn">Book Now</a>
+      </div>
+      <div class="card">
+        <h3>💪 Postpartum Recovery</h3>
+        <a href="mailto:clinic@cuddlecare.com?subject=Booking Request: Postpartum Recovery&body=Dear Cuddle Care,%0D%0A%0D%0AI would like to book an appointment for Postpartum Recovery care.%0D%0A%0D%0AMy preferred date is: [Please enter date here]%0D%0A%0D%0APlease let me know about availability.%0D%0A%0D%0AThank you." class="book-btn">Book Now</a>
+      </div>
+      <div class="card">
+        <h3>👨‍👩‍👧‍👦 Family Planning & Contraception</h3>
+        <a href="mailto:clinic@cuddlecare.com?subject=Booking Request: Family Planning & Contraception&body=Dear Cuddle Care,%0D%0A%0D%0AI would like to book an appointment for Family Planning & Contraception.%0D%0A%0D%0AMy preferred date is: [Please enter date here]%0D%0A%0D%0APlease let me know about availability.%0D%0A%0D%0AThank you." class="book-btn">Book Now</a>
+      </div>
+      <div class="card">
+        <h3>🤫 Safe & Confidential Abortion Care</h3>
+        <a href="mailto:clinic@cuddlecare.com?subject=Booking Request: Safe & Confidential Abortion Care&body=Dear Cuddle Care,%0D%0A%0D%0AI would like to book a confidential appointment for Abortion Care.%0D%0A%0D%0AMy preferred date is: [Please enter date here]%0D%0A%0D%0APlease let me know about availability.%0D%0A%0D%0AThank you." class="book-btn">Book Now</a>
+      </div>
+      <div class="card">
+        <h3>🩺 General Health Checkups & Screenings</h3>
+        <a href="mailto:clinic@cuddlecare.com?subject=Booking Request: General Health Checkups & Screenings&body=Dear Cuddle Care,%0D%0A%0D%0AI would like to book an appointment for a General Health Checkup & Screening.%0D%0A%0D%0AMy preferred date is: [Please enter date here]%0D%0A%0D%0APlease let me know about availability.%0D%0A%0D%0AThank you." class="book-btn">Book Now</a>
+      </div>
+    </div>
   </section>
 
   <footer>
