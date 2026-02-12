@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f6f2;
+  color: #2f2f2f;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Fade animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s ease forwards;
+}
+/* Fade animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Gold Divider */
+.gold-divider {
+  width: 60px;
+  height: 3px;
+  background-color: #c6a75e;
+  margin: 20px auto 40px auto;
+}
+
+/* Quote Styling */
+.quote-block {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  line-height: 1.7;
+  color: #ffffff;
+}
+@keyframes fadeInLuxury {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.luxury-fade {
+  animation: fadeInLuxury 1.2s ease forwards;
+}
+@keyframes fadeOverlay {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
