@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./Services.css"
 
 export function Services() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
@@ -72,127 +73,28 @@ Preferred Time:
 Thank you 🤍`
 
     const encodedMessage = encodeURIComponent(message)
-    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-
-    window.open(url, "_blank")
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank")
   }
 
   return (
-    <div
-      style={{
-        background: "linear-gradient(180deg, #f8f6f2, #ffffff)",
-        minHeight: "100vh",
-        position: "relative",
-        overflow: "hidden"
-      }}
-    >
-      {/* FLOATING SILVER BALLS */}
-      <div
-        style={{
-          position: "absolute",
-          width: "260px",
-          height: "260px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle at 30% 30%, #ffffff, #d9d9d9, #bfbfbf)",
-          top: "100px",
-          left: "-100px",
-          opacity: 0.5,
-          boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
-          animation: "floatLuxury 14s ease-in-out infinite"
-        }}
-      />
-
-      <div
-        style={{
-          position: "absolute",
-          width: "200px",
-          height: "200px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle at 40% 40%, #ffffff, #cfcfcf, #a6a6a6)",
-          bottom: "150px",
-          right: "-80px",
-          opacity: 0.4,
-          boxShadow: "0 20px 60px rgba(0,0,0,0.1)",
-          animation: "floatLuxury 18s ease-in-out infinite"
-        }}
-      />
+    <div className="services">
+      <div className="services-accent"></div>
 
       {/* HEADER */}
-      <section
-        style={{
-          padding: "120px 40px 80px",
-          textAlign: "center",
-          position: "relative",
-          zIndex: 1
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "clamp(40px,5vw,70px)",
-            fontWeight: 400
-          }}
-        >
-          Our Services
-        </h1>
-
-        <div
-          style={{
-            width: "70px",
-            height: "3px",
-            backgroundColor: "#c6a75e",
-            margin: "20px auto 30px"
-          }}
-        />
-
-        <p style={{ color: "#5c5c5c" }}>
-          Select a category below to explore services and pricing.
-        </p>
+      <section className="services-hero container">
+        <h1>Our Services</h1>
+        <div className="gold-divider"></div>
+        <p>Select a category below and scroll down to explore services and pricing.</p>
       </section>
 
-      {/* CATEGORY BUTTONS */}
-      <section
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          padding: "0 40px",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "20px",
-          justifyContent: "center",
-          position: "relative",
-          zIndex: 1
-        }}
-      >
+      {/* CATEGORY GRID */}
+      <section className="category-grid container">
         {Object.keys(categories).map((category) => (
           <div
             key={category}
+            className={`category-card ${activeCategory === category ? "active" : ""}`}
             onClick={() =>
-              setActiveCategory(
-                activeCategory === category ? null : category
-              )
-            }
-            style={{
-              padding: "18px 28px",
-              borderRadius: "14px",
-              backdropFilter: "blur(10px)",
-              backgroundColor:
-                activeCategory === category
-                  ? "#111"
-                  : "rgba(255,255,255,0.85)",
-              color:
-                activeCategory === category ? "#fff" : "#2f2f2f",
-              border: "1px solid rgba(0,0,0,0.1)",
-              cursor: "pointer",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-              transition: "all 0.3s ease"
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "translateY(-4px)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.transform = "translateY(0)")
+              setActiveCategory(activeCategory === category ? null : category)
             }
           >
             {category}
@@ -202,78 +104,22 @@ Thank you 🤍`
 
       {/* SERVICES PANEL */}
       {activeCategory && (
-        <section
-          style={{
-            maxWidth: "900px",
-            margin: "60px auto",
-            backgroundColor: "#111",
-            padding: "60px",
-            borderRadius: "20px",
-            boxShadow: "0 40px 100px rgba(0,0,0,0.15)",
-            color: "#fff",
-            position: "relative",
-            zIndex: 1
-          }}
-        >
-          <h2 style={{ marginBottom: "40px" }}>
-            {activeCategory}
-          </h2>
+        <section className="services-panel container fade-up">
+          <h2>{activeCategory}</h2>
 
           {categories[activeCategory].map(([service, price], index) => (
-            <div
-              key={index}
-              style={{
-                padding: "20px 0",
-                borderBottom: "1px solid rgba(255,255,255,0.1)"
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  gap: "15px"
-                }}
-              >
-                <div>
-                  <div>{service}</div>
-                  <div
-                    style={{
-                      color: "#c6a75e",
-                      marginTop: "4px"
-                    }}
-                  >
-                    {price}
-                  </div>
-                </div>
-
-                <button
-                  onClick={() =>
-                    handleWhatsAppBooking(service)
-                  }
-                  style={{
-                    backgroundColor: "#c6a75e",
-                    color: "#fff",
-                    padding: "8px 18px",
-                    border: "none",
-                    borderRadius: "20px",
-                    cursor: "pointer",
-                    fontSize: "14px",
-                    transition: "all 0.3s ease"
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.transform =
-                      "translateY(-2px)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.transform =
-                      "translateY(0)")
-                  }
-                >
-                  Book
-                </button>
+            <div key={index} className="service-row">
+              <div>
+                <p className="service-name">{service}</p>
+                <p className="service-price">{price}</p>
               </div>
+
+              <button
+                className="book-btn"
+                onClick={() => handleWhatsAppBooking(service)}
+              >
+                Book
+              </button>
             </div>
           ))}
         </section>

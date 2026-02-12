@@ -1,0 +1,127 @@
+.services {
+  background: linear-gradient(180deg, var(--light-bg), #ffffff);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent */
+.services-accent {
+  position: absolute;
+  top: 200px;
+  left: -100px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #d9d9d9, #bfbfbf);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* HERO */
+.services-hero {
+  text-align: center;
+  padding-top: 120px;
+}
+
+.services-hero h1 {
+  font-size: clamp(32px, 5vw, 60px);
+}
+
+.services-hero p {
+  margin-top: 20px;
+  color: var(--text-grey);
+}
+
+/* CATEGORY GRID */
+.category-grid {
+  margin-top: 60px;
+  display: grid;
+  gap: 20px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.category-card {
+  padding: 18px;
+  text-align: center;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+}
+
+.category-card.active {
+  background: var(--black);
+  color: white;
+}
+
+/* SERVICES PANEL */
+.services-panel {
+  margin-top: 80px;
+  background: var(--black);
+  padding: 60px 30px;
+  border-radius: 20px;
+  color: white;
+}
+
+.services-panel h2 {
+  margin-bottom: 40px;
+}
+
+.service-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-name {
+  font-size: 16px;
+}
+
+.service-price {
+  color: var(--gold);
+  margin-top: 4px;
+}
+
+.book-btn {
+  background: var(--gold);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  color: white;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .services-panel {
+    padding: 40px 20px;
+  }
+
+  .service-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .book-btn {
+    width: 100%;
+  }
+}
