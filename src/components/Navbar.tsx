@@ -1,70 +1,68 @@
+import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
+import "./Navbar.css"
 
 function Navbar() {
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
 
-  const linkStyle = (path: string) => ({
-    padding: "10px 18px",
-    borderRadius: "6px",
-    textDecoration: "none",
-    color: location.pathname === path ? "#000" : "#fff",
-    backgroundColor:
-      location.pathname === path ? "#ffffff" : "transparent",
-    transition: "all 0.3s ease",
-    fontSize: "14px",
-    letterSpacing: "1px"
-  })
+  const isActive = (path: string) =>
+    location.pathname === path ? "active" : ""
 
   return (
-    <nav
-      style={{
-        background: "linear-gradient(90deg, #111, #1c1c1c)",
-        padding: "20px 40px",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "20px"
-        }}
-      >
-        <div
-          style={{
-            color: "#fff",
-            fontWeight: 500,
-            letterSpacing: "3px",
-            fontSize: "16px"
-          }}
-        >
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="logo">
           CUDDLE CARE MOTHER & BABY CLINIC
         </div>
 
-        <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
+        <div
+          className={`nav-links ${menuOpen ? "open" : ""}`}
+        >
           <Link
             to="/"
-            style={linkStyle("/")}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "translateY(-2px)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.transform = "translateY(0)")
-            }
+            className={isActive("/")}
+            onClick={() => setMenuOpen(false)}
           >
             HOME
           </Link>
+          <Link
+            to="/about"
+            className={isActive("/about")}
+            onClick={() => setMenuOpen(false)}
+          >
+            ABOUT
+          </Link>
+          <Link
+            to="/services"
+            className={isActive("/services")}
+            onClick={() => setMenuOpen(false)}
+          >
+            SERVICES
+          </Link>
+          <Link
+            to="/gallery"
+            className={isActive("/gallery")}
+            onClick={() => setMenuOpen(false)}
+          >
+            GALLERY
+          </Link>
+          <Link
+            to="/contact"
+            className={isActive("/contact")}
+            onClick={() => setMenuOpen(false)}
+          >
+            CONTACT
+          </Link>
+        </div>
 
-          <Link to="/about" style={linkStyle("/about")}>ABOUT</Link>
-          <Link to="/services" style={linkStyle("/services")}>SERVICES</Link>
-          <Link to="/gallery" style={linkStyle("/gallery")}>GALLERY</Link>
-          <Link to="/contact" style={linkStyle("/contact")}>CONTACT</Link>
+        <div
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </nav>
