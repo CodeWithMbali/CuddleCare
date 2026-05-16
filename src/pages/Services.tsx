@@ -6,10 +6,10 @@ export function Services() {
 
   const categories: Record<string, [string, string][]> = {
     "Baby & Child Care": [
-      ["Well baby vaccination", "R250.00"],
+      ["Well baby vaccination", "R350.00"],
       ["Vitamin A & deworming (6 months - 5 years)", "R150.00"],
       ["Sick baby consultation", "R450.00"],
-      ["Routine baby check-up (milestones)", "R150.00"],
+      ["Routine baby check-up (milestones)", "R250.00"],
       ["Baby ear piercing & aftercare", "R300.00"]
     ],
     "Adult Consultations": [
@@ -17,17 +17,18 @@ export function Services() {
       ["Adult chronic consultation", "R350.00"]
     ],
     "Family Planning": [
-      ["Oral contraceptives", "R150.00"],
-      ["Injectable contraceptives", "R150.00"],
+      ["Oral contraceptives", "R200.00"],
+      ["Injectable contraceptives", "R200.00"],
       ["Emergency pill", "R250.00"],
       ["Implanon insertion", "R650.00"],
       ["Implanon removal", "R450.00"],
-      ["Termination of Pregnancy", "R1600.00"]
+      ["Termination of Pregnancy", "R2500.00"]
     ],
     "Antenatal Care": [
       ["Antenatal care first visit", "R1600.00"],
       ["Antenatal follow-up visit", "R650.00"],
       ["2D ultrasound sonar", "R350.00"],
+      ["Gender reveal scan", "R500.00"],
       ["Antenatal classes", "R450.00"]
     ],
     "Testing & Procedures": [
