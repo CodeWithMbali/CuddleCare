@@ -36,7 +36,7 @@ export function Services() {
       ["HIV counselling & testing", "R150.00"],
       ["Pregnancy test", "R100.00"],
       ["Blood group testing", "R250.00"],
-      ["Removal of sutures", "R350.00"],
+      ["Removal of sutures", "R450.00"],
       ["Laboratory services consultation (excludes procedure)", "R200.00"]
     ],
     "Wellness & Preventative Care": [
