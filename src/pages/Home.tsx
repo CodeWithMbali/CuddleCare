@@ -71,12 +71,6 @@ export function Home() {
             </Link>
           </div>
 
-          <div className="hero-trust">
-            <span>Patient-Centred</span>
-            <span>Family-Focused</span>
-            <span>Community-Minded</span>
-          </div>
-        </div>
 
         <div className="hero-visual fade-in">
           <div className="hero-image-wrap">
