@@ -42,9 +42,6 @@ export function Home() {
             <span> through every stage.</span>
           </h1>
 
-          <p className="hero-subtitle">
-            For mothers, babies and families.
-          </p>
 
           <div className="hero-line"></div>
 
