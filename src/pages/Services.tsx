@@ -397,7 +397,7 @@ Thank you`
 
           <p>
             Explore our healthcare, wellness and family-care services.
-            Select a category below, then tap the information icon for
+            Select a category below, tap the information icon then scroll down for
             additional details about a service.
           </p>
 
