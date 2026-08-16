@@ -2,96 +2,308 @@ import "./Contact.css"
 import qrImage from "../assets/QR .jpeg"
 
 export function Contact() {
+  const bookingUrl =
+    "https://mygc.co.za/external/diary/a8416797-22a9-4e1e-a221-bf00666382ac"
+
+  const phoneNumber = "27662719931"
+
+  const whatsappMessage = encodeURIComponent(`Hello Cuddle Care 👋
+
+I would like to book an appointment.
+
+My Name:
+Preferred Date:
+Preferred Time:
+Service:
+
+Thank you`)
+
   return (
-    <div className="contact">
-      <div className="contact-accent"></div>
+    <main className="contact-page">
+      {/* DECORATIVE ELEMENTS */}
+      <div className="contact-orb contact-orb-one"></div>
+      <div className="contact-orb contact-orb-two"></div>
+      <div className="contact-sage-glow"></div>
 
-      {/* HEADER */}
-      <section className="contact-hero container">
-        <h1>Contact, Booking & Working Hours</h1>
-        <div className="gold-divider"></div>
-        <p>
-          Book your appointment easily using our online system or contact us directly.
-        </p>
-      </section>
+      {/* HERO */}
+      <section className="contact-hero">
+        <div className="contact-hero-inner">
+          <span className="contact-eyebrow">
+            We're Here For You
+          </span>
 
-      {/* BOOKING OPTIONS */}
-      <section className="booking-grid container">
-        {/* Online Booking */}
-        <div className="booking-card dark">
-          <h2>Online Booking</h2>
+          <h1>
+            Let’s make your
+            <span> visit simple.</span>
+          </h1>
 
-          <a
-            href="https://mygc.co.za/external/diary/a8416797-22a9-4e1e-a221-bf00666382ac"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="btn-primary">Book Now</button>
-          </a>
+          <div className="contact-divider"></div>
 
-          <div className="qr-section">
-            <p>Scan QR Code</p>
-            <img src={qrImage} alt="QR Code" />
+          <p>
+            Book your appointment online or speak to us directly.
+            Our team is here to help you find the right service and
+            appointment time.
+          </p>
+
+          <div className="contact-practice">
+            <span>Registered Practice</span>
+            <strong>Practice No. 1021710</strong>
           </div>
         </div>
+      </section>
 
-        {/* Alternative Booking */}
-        <div className="booking-card light">
-          <h2>Alternative Booking</h2>
+      {/* QUICK ACTIONS */}
+      <section className="contact-actions">
+        <div className="contact-actions-grid">
 
-          <p>If you cannot access the booking system, please send:</p>
+          {/* ONLINE */}
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-action-card primary"
+          >
+            <span className="action-number">01</span>
 
-          <ul>
-            <li>Your full name</li>
-            <li>Preferred date & time</li>
-            <li>Service you'd like to book</li>
-          </ul>
+            <div>
+              <span className="action-label">Online</span>
+              <h2>Book Appointment</h2>
+              <p>
+                Choose your preferred service, date and available
+                appointment time online.
+              </p>
+            </div>
 
-          <div className="contact-info">
+            <span className="action-arrow">↗</span>
+          </a>
+
+          {/* WHATSAPP */}
+          <a
+            href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-action-card"
+          >
+            <span className="action-number">02</span>
+
+            <div>
+              <span className="action-label">Message</span>
+              <h2>WhatsApp Us</h2>
+              <p>
+                Send us your full name and surname, preferred date and time + the
+                service you would like to book.
+              </p>
+            </div>
+
+            <span className="action-arrow">↗</span>
+          </a>
+
+          {/* CALL */}
+          <a
+            href="tel:+27662719931"
+            className="contact-action-card"
+          >
+            <span className="action-number">03</span>
+
+            <div>
+              <span className="action-label">Call</span>
+              <h2>066 271 9931</h2>
+              <p>
+                Speak to us directly if you need help with your booking
+                or have a question.
+              </p>
+            </div>
+
+            <span className="action-arrow">↗</span>
+          </a>
+
+          {/* EMAIL */}
+          <a
+            href="mailto:info@cuddlecare.clinic"
+            className="contact-action-card"
+          >
+            <span className="action-number">04</span>
+
+            <div>
+              <span className="action-label">Email</span>
+              <h2>Send an Email</h2>
+              <p>
+                Reach us at info@cuddlecare.clinic for general enquiries
+                and appointment assistance.
+              </p>
+            </div>
+
+            <span className="action-arrow">↗</span>
+          </a>
+        </div>
+      </section>
+
+      {/* BOOKING + QR */}
+      <section className="booking-concierge">
+        <div className="booking-concierge-inner">
+
+          <div className="booking-copy">
+            <span className="contact-section-label">
+              Booking Concierge
+            </span>
+
+            <h2>
+              Prefer to book from your phone?
+            </h2>
+
             <p>
-              Call/WhatsApp:{" "}
-              <a href="https://wa.me/27662719931" target="_blank">
-                066 271 9931
-              </a>
+              Scan the QR code to open our online booking system
+              directly.
             </p>
 
+            <div className="booking-reminder">
+              <span>When booking manually, please include:</span>
+
+              <ul>
+                <li>Your full name and surname</li>
+                <li>Your preferred date</li>
+                <li>Your preferred time</li>
+                <li>The service you would like to book</li>
+              </ul>
+            </div>
+
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="booking-main-button"
+            >
+              Open Booking System
+              <span>→</span>
+            </a>
+          </div>
+
+          <div className="qr-card">
+            <div className="qr-card-glow"></div>
+
+            <span className="qr-label">
+              SCAN TO BOOK
+            </span>
+
+            <img
+              src={qrImage}
+              alt="Cuddle Care booking QR code"
+            />
+
             <p>
-              Email:{" "}
-              <a href="mailto:info@cuddlecare.clinic">
-                info@cuddlecare.clinic
-              </a>
+              Point your phone camera at the QR code.
             </p>
           </div>
+
         </div>
       </section>
 
       {/* LOCATION */}
-      <section className="location container">
-        <h2>Our Location</h2>
+      <section className="location-section">
+        <div className="location-inner">
 
-        <p>
-          Cuddle Care Mother and Baby Clinic,  
-          Shop A7, Northview Shopping Center,  
-          Northworld, 2188
-        </p>
+          <div className="location-copy">
+            <span className="contact-section-label">
+              Visit Us
+            </span>
 
-        <iframe
-          src="https://www.google.com/maps?q=Northview%20Shopping%20Center%20Northworld%202188&output=embed"
-          loading="lazy"
-        ></iframe>
-      </section>
+            <h2>Our Location</h2>
 
-      {/* WORKING HOURS */}
-      <section className="hours container">
-        <div className="hours-card">
-          <h2>Working Hours</h2>
-          <div className="gold-divider"></div>
+            <p>
+              Cuddle Care Mother & Baby Clinic
+              <br />
+              Shop A7, Northview Shopping Center
+              <br />
+              Northworld, 2188
+            </p>
 
-          <p><strong>Monday – Friday:</strong> 09:00am – 6:00pm</p>
-          <p><strong>Saturday:</strong> 09:00am – 5:00pm</p>
-          <p className="closed"><strong>Sunday:</strong> Closed</p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Northview+Shopping+Center+Northworld+2188"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="directions-link"
+            >
+              Get Directions
+              <span>↗</span>
+            </a>
+          </div>
+
+          <div className="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps?q=Northview%20Shopping%20Center%20Northworld%202188&output=embed"
+              loading="lazy"
+              title="Cuddle Care Mother and Baby Clinic location"
+            ></iframe>
+          </div>
+
         </div>
       </section>
-    </div>
+
+      {/* HOURS */}
+      <section className="hours-section">
+        <div className="hours-inner">
+
+          <div className="hours-heading">
+            <span className="contact-section-label light">
+              Plan Your Visit
+            </span>
+
+            <h2>Working Hours</h2>
+
+            <p>
+              Please use our online booking system or contact us to
+              arrange your appointment.
+            </p>
+          </div>
+
+          <div className="hours-card">
+            <div className="hours-row">
+              <span>Monday – Friday</span>
+              <strong>09:00 – 18:00</strong>
+            </div>
+
+            <div className="hours-row">
+              <span>Saturday</span>
+              <strong>09:00 – 17:00</strong>
+            </div>
+
+            <div className="hours-row closed">
+              <span>Sunday</span>
+              <strong>Closed</strong>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="contact-final">
+        <div className="contact-final-card">
+          <span className="contact-section-label">
+            Cuddle Care
+          </span>
+
+          <h2>
+            Your care starts with a conversation.
+          </h2>
+
+          <p>
+            Not sure which appointment to choose? Chat to us and we’ll
+            help you find the right service.
+          </p>
+
+          <a
+            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+              "Hello Cuddle Care 👋\n\nI need some help choosing the correct service."
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Chat on WhatsApp
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+    </main>
   )
 }
