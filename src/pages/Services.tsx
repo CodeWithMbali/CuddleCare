@@ -10,7 +10,7 @@ export function Services() {
       ["Vitamin A & deworming (6 months - 5 years)", "R150.00"],
       ["Sick baby consultation", "R450.00"],
       ["Routine baby check-up (milestones)", "R250.00"],
-      ["Baby ear piercing & aftercare", "R300.00"]
+      ["Baby ear piercing & aftercare", "R450.00"]
     ],
     "Adult Consultations": [
       ["Adult acute consultation", "R550.00"],
