@@ -71,6 +71,10 @@ export function Home() {
             </Link>
           </div>
 
+          <div className="hero-trust">
+            
+          </div>
+        </div>
 
         <div className="hero-visual fade-in">
           <div className="hero-image-wrap">
